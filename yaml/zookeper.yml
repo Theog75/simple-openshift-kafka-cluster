@@ -63,10 +63,8 @@ items:
               cpu: 200m
               memory: 300Mi
           livenessProbe:
-            exec:
-              command:
-              - pidof
-              - java
+            tcpSocket:
+              port: 2181
             failureThreshold: 10
             initialDelaySeconds: 20
             periodSeconds: 1
@@ -76,8 +74,9 @@ items:
           - mountPath: /data
             name: zookeeper
           readinessProbe:
-            tcpSocket:
-              port: 2181
+            exec:
+              command:
+              - /readiness.sh
             failureThreshold: 15
             initialDelaySeconds: 5
             periodSeconds: 1
