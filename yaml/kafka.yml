@@ -47,7 +47,7 @@ items:
         - image: quay.io/ypery/kafka:v0.15
           env:
           imagePullPolicy: Always
-          name: zookeeper
+          name: kafka
           ports:
           - containerPort: 9092
             protocol: TCP
