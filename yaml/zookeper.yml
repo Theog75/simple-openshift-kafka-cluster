@@ -44,7 +44,7 @@ items:
                 - key: node-role.kubernetes.io/master
                   operator: DoesNotExist
         containers:
-        - image: quay.io/ypery/zookeeper:v0.5
+        - image: quay.io/ypery/zookeeper:v0.7
           env:
           imagePullPolicy: Always
           name: zookeeper
