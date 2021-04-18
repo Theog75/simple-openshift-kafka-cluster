@@ -1,8 +1,8 @@
 FROM centos
 
 RUN  yum update -y && yum install -y java wget curl && mkdir /data && chmod 777 -R /data 
-COPY kafka_2.11-0.9.0.0.tgz /
-RUN tar zxvf kafka_2.11-0.9.0.0.tgz -C /opt && mv /opt/kafka_2.11-0.9.0.0 /opt/kafka
+COPY kafka_2.12-2.7.0.tgz /
+RUN tar zxvf kafka_2.12-2.7.0.tgz -C /opt && mv /opt/kafka_2.12-2.7.0 /opt/kafka
 COPY runkafka.sh /
 COPY readiness.sh /
 COPY server.properties /opt/kafka/config
