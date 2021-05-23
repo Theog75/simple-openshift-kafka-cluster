@@ -11,3 +11,9 @@ STAT=$(/opt/kafka/bin/kafka-console-consumer.sh --topic readiness-$HOSTNAME --fr
 
 
 if [[ "$STAT" =~ "$HOSTNAME:" ]]; then
+    echo "All is well";
+    exit 0
+else 
+    echo "readiness failed";
+    exit 1
+fi
