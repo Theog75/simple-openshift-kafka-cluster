@@ -64,7 +64,7 @@ items:
               - pidof
               - bash
             failureThreshold: 30
-            initialDelaySeconds: 1
+            initialDelaySeconds: 10
             periodSeconds: 1
             successThreshold: 1
             timeoutSeconds: 1
