@@ -59,8 +59,10 @@ items:
               cpu: 300m
               memory: 1500Mi
           readinessProbe:
-            tcpSocket:
-              port: 9092
+            exec:
+              command:
+              - pidof
+              - bash
             failureThreshold: 10
             initialDelaySeconds: 20
             periodSeconds: 1
@@ -69,7 +71,7 @@ items:
           livenessProbe:
             exec:
               command:
-              - /readiness.sh
+              - /liveness.sh
             failureThreshold: 3
             initialDelaySeconds: 15
             periodSeconds: 5
