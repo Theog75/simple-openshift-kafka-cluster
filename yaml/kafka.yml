@@ -44,7 +44,7 @@ items:
                 - key: node-role.kubernetes.io/master
                   operator: DoesNotExist
         containers:
-        - image: quay.io/ypery/kafka:v0.16
+        - image: quay.io/ypery/kafka:v0.6
           env:
           imagePullPolicy: Always
           name: kafka
@@ -63,16 +63,16 @@ items:
               command:
               - pidof
               - bash
-            failureThreshold: 10
-            initialDelaySeconds: 20
+            failureThreshold: 30
+            initialDelaySeconds: 1
             periodSeconds: 1
             successThreshold: 1
             timeoutSeconds: 1
           livenessProbe:
             tcpSocket:
               port: 9092
-            failureThreshold: 3
-            initialDelaySeconds: 15
+            failureThreshold: 10
+            initialDelaySeconds: 5
             periodSeconds: 5
             successThreshold: 1
             timeoutSeconds: 15
