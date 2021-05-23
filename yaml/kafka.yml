@@ -44,7 +44,7 @@ items:
                 - key: node-role.kubernetes.io/master
                   operator: DoesNotExist
         containers:
-        - image: quay.io/ypery/kafka:v0.6
+        - image: quay.io/ypery/kafka:v0.5
           env:
           imagePullPolicy: Always
           name: kafka
