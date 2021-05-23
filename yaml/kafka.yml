@@ -61,7 +61,8 @@ items:
           livenessProbe:
             exec:
               command:
-              - /liveness.sh
+              - pidof
+              - java
             failureThreshold: 10
             initialDelaySeconds: 10
             periodSeconds: 5
