@@ -6,7 +6,7 @@ RUN tar zxvf kafka_2.12-2.7.0.tgz -C /opt && mv /opt/kafka_2.12-2.7.0 /opt/kafka
 COPY runkafka.sh /
 COPY liveness.sh /
 COPY server.properties /opt/kafka/config
-RUN chmod 777 -R /opt/kafka/ && mkdir /opt/kafka/logs && chmod 777 -R /opt/kafka/logs
+RUN chmod 777 -R /opt/kafka/ && mkdir /opt/kafka/logs && chmod 777 -R /opt/kafka/logs && chmod +x /liveness.sh
 #RUN cp /opt/kafka/config/server.properties /tmp
 CMD ["/runkafka.sh"]
 

@@ -44,7 +44,7 @@ items:
                 - key: node-role.kubernetes.io/master
                   operator: DoesNotExist
         containers:
-        - image: quay.io/ypery/kafka:v0.5
+        - image: quay.io/ypery/kafka:v0.9
           env:
           imagePullPolicy: Always
           name: kafka
@@ -58,16 +58,6 @@ items:
             requests:
               cpu: 300m
               memory: 1500Mi
-          readinessProbe:
-            exec:
-              command:
-              - pidof
-              - bash
-            failureThreshold: 30
-            initialDelaySeconds: 10
-            periodSeconds: 1
-            successThreshold: 1
-            timeoutSeconds: 1
           livenessProbe:
             exec:
               command:
