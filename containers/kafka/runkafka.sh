@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-
+sleep 20
 mkdir -p /data/kafka-logs/broker0
 
 ID=$(echo "$HOSTNAME" |sed -r  's/kafka-([0-9])/\1/')
