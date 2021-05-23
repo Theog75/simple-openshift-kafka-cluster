@@ -69,8 +69,9 @@ items:
             successThreshold: 1
             timeoutSeconds: 1
           livenessProbe:
-            tcpSocket:
-              port: 9092
+            exec:
+              command:
+              - /liveness.sh
             failureThreshold: 10
             initialDelaySeconds: 10
             periodSeconds: 5
