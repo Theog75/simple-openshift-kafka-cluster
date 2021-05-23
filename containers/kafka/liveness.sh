@@ -7,7 +7,7 @@ echo $HOSTNAME|/opt/kafka/bin/kafka-console-producer.sh --topic readiness-$HOSTN
 
 STAT=$(/opt/kafka/bin/kafka-console-consumer.sh --topic readiness-$HOSTNAME --from-beginning --bootstrap-server kafka-2.kafka:9092,kafka-0.kafka:9092,kafka-1.kafka:9092 --timeout-ms 10000 )
 
-/opt/kafka/bin/kafka-topics.sh --delete --topic readiness-$HOSTNAME  --bootstrap-server kafka-2.kafka:9092,kafka-0.kafka:9092,kafka-1.kafka:9092 
+# /opt/kafka/bin/kafka-topics.sh --delete --topic readiness-$HOSTNAME  --bootstrap-server kafka-2.kafka:9092,kafka-0.kafka:9092,kafka-1.kafka:9092 
 
 
 if [[ "$STAT" =~ "$HOSTNAME:" ]]; then
