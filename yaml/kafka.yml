@@ -58,16 +58,6 @@ items:
             requests:
               cpu: 300m
               memory: 1500Mi
-          livenessProbe:
-            exec:
-              command:
-              - pidof
-              - java
-            failureThreshold: 10
-            initialDelaySeconds: 10
-            periodSeconds: 5
-            successThreshold: 1
-            timeoutSeconds: 50
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
           volumeMounts:
